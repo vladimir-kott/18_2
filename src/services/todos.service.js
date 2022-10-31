@@ -10,7 +10,7 @@ const todosService = {
         });
         return data;
     },
-    load: async (newTask) => {
+    postTask: async (newTask) => {
         const {data} = await httpService.post(todosEndepoint, {
             userId: newTask.id,
             id:1,

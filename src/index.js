@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import {
-    createTask,
+    taskCreated,
     titleChanged,
     taskDeleted,
     completeTask,
@@ -39,14 +39,14 @@ const App = (params) => {
         return <p>{error}</p>;
     }
 
-    const buttonHandler = (e) => {
-        dispatch(createTask(state))
+    const createTask = () => {
+        dispatch(taskCreated())
     }
 
     return (
         <>
             <h1> App</h1>
-            <button onClick={buttonHandler}>Add task</button>
+            <button onClick={createTask}>Add task</button>
             <ul>
                 {state.map((el) => (
                     <li key={el.id}>
